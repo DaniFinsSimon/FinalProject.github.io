@@ -1,0 +1,27 @@
+body{
+    background-color: aliceblue;
+}
+
+h1{
+    color: black;
+}
+
+h2{
+    color: rgb(69, 69, 69);
+}
+
+p{
+    color: black;
+    font-family: fantasy;
+}
+
+.ui{
+    font-size:25px ;
+}
+
+.qqq{
+    font-size: 90px;
+}
+#vi{
+    margin-left: 80px;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
+    <title>JS Bin</title>
+    <link rel="stylesheet" href="dani.css">
+</head>
+<body>
+<ul>
+
+
+
+
+
+    <li>
+        <a href="mainpage.html" class="ui">Home</a>
+    </li>
+</ul>
+<h3>Exciting Quiz Time!</h3>
+
+<form id="quiz-form">
+
+    <fieldset>
+        <legend>What language is this programmed in?</legend>
+        <label><input name="question1" value="javascript" type="radio">JavaScript</label><br>
+        <label><input name="question1" value="python" type="radio">Python</label><br>
+        <label><input name="question1" value="java" type="radio">Java</label><br>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Does this code have CSS on it?</legend>
+        <label><input name="question2" value="yes" type="radio">Yes</label><br>
+        <label><input name="question2" value="no" type="radio">No</label><br>
+    </fieldset>
+
+    <fieldset>
+        <legend> What proggraming language of these is the oldest?</legend>
+
+        <label><input name="question3" value="html" type="radio">Html</label><br>
+        <label><input name="question3" value="fortran" type="radio">Fortran</label><br>
+        <label><input name="question3" value="jeje" type="radio"> JavaScript</label><br>
+    </fieldset>
+
+
+    <fieldset>
+        <legend> What is the proggaming language most used now?</legend>
+
+        <label><input name="question4" value="html" type="radio">CSS</label><br>
+        <label><input name="question4" value="hola" type="radio"> JavaScript</label><br>
+        <label><input name="question4" value="fortran" type="radio">Python</label><br>
+
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Are there any images in this website?</legend>
+        <label><input name="question5" value="popo" type="radio">Yes</label><br>
+        <label><input name="question5" value="python" type="radio">No</label><br>
+    </fieldset>
+
+
+    <div id="results"></div>
+    <div id="score">Score: </div>
+    <button type="submit">Check me</button>
+
+
+
+
+    <script>
+        var score=0;
+
+        var quizForm = document.getElementById("quiz-form");
+        quizForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // resultsDiv is the div to display the results in
+            var resultsDiv = document.getElementById("results");
+
+            // answer1 stores whatever <input> element that they checked
+            //  or null if they didn't check any answer
+            var answer1 = document.querySelector('[name="question1"]:checked');
+            var answer2 = document.querySelector('[name="question2"]:checked');
+            var answer3 = document.querySelector('[name="question3"]:checked');
+            var answer4 = document.querySelector('[name="question4"]:checked');
+            var answer5 = document.querySelector('[name="question5"]:checked');
+            if (!answer1 || !answer2 || !answer3 || !answer4 || !answer5 ) {
+                resultsDiv.innerHTML = "You didn't check everything! 😞 ";
+
+            } else {
+                // answer1.value is the value attribute of the checked <input>
+                if (answer1.value === "javascript"){
+                    score +=1 ;
+                    document.getElementById("score").innerHTML = score /5;
+
+                } if (answer2.value === "yes"){
+                    score +=1 ;
+                    document.getElementById("score").innerHTML = score;
+
+                }
+                if (answer3.value === "fortran"){
+
+                    score +=1 ;
+                    document.getElementById("score").innerHTML = score;
+                }
+                if (answer4.value === "hola"){
+
+                    score +=1 ;
+                    document.getElementById("score").innerHTML = score;
+                }
+                if (answer5.value === "python") {
+                    score +=1 ;
+                    document.getElementById("score").innerHTML = score;
+                }
+                if (score === 5){
+                    resultsDiv.innerHTML = "You got it!";
+                    score=0;
+                }
+
+                else {
+                    resultsDiv.innerHTML = "Try again!";
+                    score=0;
+                }
+
+
+
+
+            }
+
+
+
+
+        });
+
+
+
+
+    </script>
+</body>
+</html>
